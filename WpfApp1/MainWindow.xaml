@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="598.8" Width="800">
+    <Grid>
+        <Button Click="browse_Click" Name="browse" Content="open" Height="30" Width="55" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,15,0,0"></Button>
+        <ListBox SelectionChanged="listbox_SelectionChanged" Name="listbox" VerticalAlignment="Top" Margin="0,100,0,0" Width="600" Height="100">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal">
+                    </StackPanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Name="sp" Orientation="Horizontal">
+                        <Label Name="lb" Visibility="Collapsed" Content="{Binding full_name}" />
+                        <Image  Height="90" Source="{Binding Path}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Image Name="image1" Height="250" Width="450" VerticalAlignment="Bottom"></Image>
+    </Grid>
+</Window>
